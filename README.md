@@ -11,7 +11,7 @@ npm install
 npm install --dev
 ```
 
-### Compiles and minifies for production
+### Run local
 ```
 npm run dev
 ```
