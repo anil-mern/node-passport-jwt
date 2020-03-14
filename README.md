@@ -28,7 +28,7 @@ npm run lint
 ### Git
 
 - git init
-- git remote add origin <github-url>
+- git remote add origin _github-url_
 - git add .
 - git commit -m "base commit"
 - git push --set-upstream origin master
