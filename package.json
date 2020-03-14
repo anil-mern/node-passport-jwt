@@ -1,23 +1,32 @@
 {
-  "name": "node-passport-jwt",
-  "version": "1.0.0",
-  "description": "An node js application allow only authentication users to access.",
-  "main": "app.js",
-  "scripts": {
-    "test": "node app"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anil-bomma/node-passport-jwt.git"
-  },
-  "keywords": [
-    "node",
-    "npm"
-  ],
-  "author": "Anil Bomma",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/anil-bomma/node-passport-jwt/issues"
-  },
-  "homepage": "https://github.com/anil-bomma/node-passport-jwt#readme"
+    "name": "node-passport-jwt",
+    "version": "1.0.0",
+    "description": "An node js application allow only authentication users to access.",
+    "main": "app.js",
+    "scripts": {
+        "test": "node app",
+        "dev": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/anil-bomma/node-passport-jwt.git"
+    },
+    "keywords": [
+        "node",
+        "npm"
+    ],
+    "author": "Anil Bomma",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/anil-bomma/node-passport-jwt/issues"
+    },
+    "homepage": "https://github.com/anil-bomma/node-passport-jwt#readme",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.9.4"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.2"
+    }
 }
