@@ -4,8 +4,8 @@
     "description": "An node js application allow only authentication users to access.",
     "main": "app.js",
     "scripts": {
-        "test": "node app",
-        "dev": "nodemon app.js"
+        "test": "node server",
+        "dev": "nodemon server.js"
     },
     "repository": {
         "type": "git",
@@ -22,9 +22,16 @@
     },
     "homepage": "https://github.com/anil-bomma/node-passport-jwt#readme",
     "dependencies": {
+        "async": "^3.2.0",
+        "bcrypt": "^4.0.1",
+        "body-parser": "^1.19.0",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
-        "mongoose": "^5.9.4"
+        "glob": "^7.1.6",
+        "helmet": "^3.21.3",
+        "lodash": "^4.17.15",
+        "mongoose": "^5.9.4",
+        "winston": "^3.2.1"
     },
     "devDependencies": {
         "nodemon": "^2.0.2"

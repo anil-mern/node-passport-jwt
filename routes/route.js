@@ -1,9 +1,31 @@
 const express = require('express');
-// const mongoose = require("mongooes");
+const env = require('dotenv');
+
+const User = require("../modal/User");
+const util = require("../utils/util");
 
 const router = express.Router();
-router.post('/register', (req, res) => {
-    res.send("user register route")
+
+env.config();
+
+router.post('/register', async(req, res) => {
+    console.log("req: ", req.body);
+    const user = new User({
+        userId: util.uuid(),
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        displayName: req.body.firstName + " " + req.body.lastName,
+        email: req.body.email,
+        password: req.body.password,
+        createdBy: 'admin'
+    });
+
+    try {
+        const savedUser = await user.save();
+        return res.send(savedUser);
+    } catch (err) {
+        console.log("err:", err);
+    }
 })
 
 
