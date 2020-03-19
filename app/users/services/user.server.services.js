@@ -30,6 +30,7 @@ const validateUser = (userObj, cb) => {
 module.exports.saveUser = (userObj, cb) => {
     try {
         async.waterfall([
+            // validate user object 
             (callback) => {
                 validateUser(userObj, (err, validate) => {
                     if (validate) {
@@ -46,19 +47,20 @@ module.exports.saveUser = (userObj, cb) => {
                 });
             },
             async(userData, callback) => {
-
-                const user = new User({
-                    userId: util.uuid(),
-                    firstName: userData.firstName,
-                    lastName: userData.lastName,
-                    displayName: userData.firstName + " " + userData.lastName,
-                    email: userData.email,
-                    password: userData.password,
-                    createdBy: 'admin'
-                });
-
                 try {
+
+                    const user = new User({
+                        userId: util.uuid(),
+                        firstName: userData.firstName,
+                        lastName: userData.lastName,
+                        displayName: userData.firstName + " " + userData.lastName,
+                        email: userData.email,
+                        password: userData.password,
+                        createdBy: 'admin'
+                    });
+
                     return await dsMgr.save(user);
+
                 } catch (err) {
                     console.log("err:", err);
                     callback(err);
