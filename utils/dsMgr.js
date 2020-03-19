@@ -7,4 +7,15 @@ let save = async(modal) => {
     }
 }
 
+let findOne = async(modal, query, select) => {
+    try {
+        let modalData = await modal.findOne(query).select(select).lean().exec();
+        return modalData;
+    } catch (err) {
+        return err;
+    }
+
+}
+
 module.exports.save = save;
+module.exports.findOne = findOne;
