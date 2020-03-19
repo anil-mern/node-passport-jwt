@@ -72,7 +72,6 @@ let isWhitelist = (req) => {
 
 // checking authenticated routes and public routes 
 app.use(function(req, res, next) {
-    console.log("----------==========-------------");
     var authToken = req.headers.authorization;
     if (authToken) {
         logger.debug("-----auth reruired route------");
